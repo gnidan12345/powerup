@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Trello Power-Up</title>
+  <script src="https://p.trellocdn.com/power-up.min.js"></script>
+</head>
+<body>
+  <script>
+    // Simple Trello Power-Up Initialization
+    window.TrelloPowerUp.initialize({
+      
+      // Add a simple button to cards
+      'card-buttons': function(t, options) {
+        return [{
+          text: 'Hello World',
+          callback: function(t) {
+            return t.alert({
+              message: 'Hello from your Power-Up!',
+              duration: 3
+            });
+          }
+        }];
+      },
+      
+      // Add a simple badge to cards
+      'card-badges': function(t) {
+        return [{
+          text: 'Badge',
+          color: 'blue'
+        }];
+      }
+      
+    });
+    
+    console.log('Simple Power-Up loaded');
+  </script>
+</body>
+</html>
